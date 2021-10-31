@@ -6,7 +6,7 @@
     4) I think sth is missing need to chec with other registation pages on what is missing
     
 -->
-
+<template> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,6 +111,7 @@
         </div>
         </section>
     </div>
+</template> 
 
 <script>
     const app = Vue.createApp({
