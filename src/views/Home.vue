@@ -22,10 +22,12 @@
 </template>
 
 <script>
-import BlogPost from "../components/BlogPost.vue"
+import BlogPost from "../components/BlogPost.vue";
+import BlogCard from "../components/BlogCard.vue";
+import Arrow from "../assets/Icons/arrow-right-light.svg"
 export default {
   name: "Home",
-  components: { BlogPost },
+  components: { BlogPost, BlogCard, Arrow },
   data(){
     return{
       welcomeScreen:{
