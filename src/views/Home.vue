@@ -24,12 +24,12 @@ export default {
         {
           title: "title1",
           blogHTML :"blogHTML1",
-          blogCoverPhoto:"blogCoverPhoto1",
+          blogCoverPhoto:"beautiful-stories",
         },
         {
           title: "title2",
           blogHTML :"blogHTML2",
-          blogCoverPhoto:"blogCoverPhoto2",
+          blogCoverPhoto:"designed-for-everyone",
         },
       ],
     };
