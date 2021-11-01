@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <BlogPost/>
-    <BlogPost/>
+    <BlogPost :post="welcomeScreen"/>
+    <BlogPost :post="post" v-for ="(post,index) in sampleBlogPost" :key="index" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 import BlogPost from "../components/BlogPost.vue"
 export default {
   name: "Home",
-  components: {BlogPost},
+  components: { BlogPost },
   data(){
     return{
       welcomeScreen:{
