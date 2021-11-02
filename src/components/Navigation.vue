@@ -9,7 +9,7 @@
             </div>
             <div class="nav-links">
                 <ul>
-                    <router-links class="link" to="#">Home</router-links>
+                    <router-links class="link" to="#">Home-test</router-links>
                     <router-links class="link" to="#">Blogs</router-links>
                     <router-links class="link" to="#">Create Post</router-links>
                     <router-links class="link" to="#">Login/Register</router-links>
