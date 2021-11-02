@@ -1,6 +1,6 @@
 <template>
     <div class="blog-card">
-        <div class="icons">
+        <div v-show="editPost" class="icons">
             <div class="icon">
                 <Edit class="edit"/>
             </div>
@@ -8,7 +8,7 @@
                 <Delete class="delete"/>
             </div>
         </div>
-        <img :src="require(`../assets/blogCards/${post.blogCoverPhoto}.jpg`)" alt="" />
+        <img :src="require(`../assets/blogCards/${post.blogCoverPhoto}.jpg`)" alt="" >
         <div class="info">
             <h4>{{ post.blogTitle }}</h4>
             <h6>Posted on: {{ post.blogDate }}</h6>
@@ -32,6 +32,11 @@ export default {
         Arrow,
         Edit,
         Delete,
+    },
+    computed: {
+        editPost() {
+            return this.$store.state.editPost;
+        },
     },
 }
 </script>

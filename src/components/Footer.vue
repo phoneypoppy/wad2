@@ -3,7 +3,7 @@
         <div class="container">
             <div class="left">
                 <div class="col-1">
-                    <router-link class="header" :to="{name:'home'}">GameBlog</router-link>
+                    <router-link class="header" :to="{name:'Home'}">GameBlog</router-link>
                     <ul>
                         <li> 
                             <a href="#"><youTube class="svg-icon"/></a>
@@ -21,11 +21,10 @@
                 </div>
                 <div class="col-2">
                     <ul>
-                        <router-link class="link" :to="{name : 'home' }"> Home </router-link> 
-                        <router-link class="link" :to="{name : 'blogs' }"> Blogs </router-link> 
-                        <router-link v-if="user" class="link" :to="{name : 'newpost' }"> Create Post </router-link> 
-                        <router-link v-if="!user" class="link" :to="{name : 'login' }"
-                            >Login In / register </router-link>
+                        <router-link class="link" :to="{name : 'Home' }">Home</router-link> 
+                        <router-link class="link" :to="{name : 'Blogs' }">Blogs </router-link> 
+                        <router-link v-if="user" class="link" to="#">Create Post</router-link> 
+                        <router-link v-if="!user" class="link" :to="{name : 'Login' }">Login / register </router-link>
 
                     </ul> 
                 </div>
@@ -49,6 +48,11 @@ export default {
         twitter,
         instagram,
         linkedin
+    },
+    computed: {
+        user() {
+            return this.$store.state.user;
+        }
     }
 };
 </script>
