@@ -5,6 +5,7 @@ import Blogs from "../views/Blogs.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
+import Profile from "../views/Profile.vue";
 
 Vue.use(VueRouter);
 
@@ -49,6 +50,14 @@ const routes = [
       title : 'Forgot Password'
     }
   },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
+    meta: {
+      title : 'Profile'
+    }
+  },
 ];
 
 const router = new VueRouter({
@@ -58,7 +67,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to,from,next) => {
-  document.title = `${to.meta.title} | FireBlog `;
+  document.title = `${to.meta.title} | GameBlog `;
   next();
 });
 export default router;
