@@ -5,7 +5,7 @@
                 Dont have account?
                 <router-link class ="router-link" :to="{name: 'Register'}"> Register</router-link>
             </p>
-            <h2>Login to xxx </h2>
+            <h2>Login to GameBlog </h2>
             <div class="inputs">
                 <div class="input">
                     <input type = "text" placeholder="Email" v-model="email">
@@ -17,7 +17,7 @@
                 </div>
             </div>      
             <router-link class="forgot-password" :to="{name: 'ForgotPasword'}">Forgot pw</router-link>
-            <button> Sigin </button> 
+            <button> SignIn </button> 
             <div class="angle"></div>
         </form>
         <div class="background"></div>
