@@ -1,11 +1,11 @@
 <template>
-  <div class ="form-wrap">
+    <div class ="form-wrap">
         <form class = "register">
             <p class =  "login-register">
                 Dont have account?
                 <router-link class ="router-link" :to="{name: 'Register'}"> Register</router-link>
             </p>
-            <h2>Login to xxx </h2>
+            <h2>Login to GameBlog</h2>
             <div class="inputs">
                 <div class="input">
                     <input type = "text" placeholder="FirstName" v-model="firstName">
@@ -34,11 +34,11 @@
             <div class="angle"></div>
         </form>
         <div class="background"></div>
-  </div>
+    </div>
 </template>
 
 <script>
-import email from "../assets/Icons/evelope-regular.svg"
+import email from "../assets/Icons/envelope-regular.svg"
 import password from "../assets/Icons/lock-alt-solid.svg"
 import user from "../assets/Icons/user-alt-light.svg"
 export default {

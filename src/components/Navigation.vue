@@ -5,7 +5,7 @@
         <nav class="container">
 
             <div class="branding">
-                <router-link class="header" :to="{ name: 'Home' }"> GameBlogs </router-link>
+                <router-link class="header" :to="{ name: 'Home' }"> GameBlog </router-link>
             </div>
             <div class="nav-links">
                 <ul v-show="!mobile">
@@ -50,7 +50,7 @@ export default {
     methods:{
         checkScreen(){
             this.windowWidth = window.innerWidth;
-            if (this.windowWidth<= 750){
+            if (this.windowWidth <= 750){
                 this.mobile = true;
                 return;
             }
@@ -94,7 +94,7 @@ export default {
                 .header {
                     font-weight: 600;
                     font-size:  24px;
-                    color: black;
+                    color: #000;
                     text-decoration: none;
                 }
             }
@@ -139,13 +139,13 @@ export default {
             flex-direction: column;
             position : fixed;
             height: 100%;
-            background-color: #3030;
+            background-color: #303030;
             top: 0;
             left : 0;
 
             .link{
                 padding : 15px 0;
-                color :white
+                color :#fff
             }
         }
         .mobile-nav-enter-active,

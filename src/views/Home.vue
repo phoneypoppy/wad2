@@ -1,20 +1,19 @@
 <template>
   <div class="home">
     <BlogPost :post="welcomeScreen"/>
-    <BlogPost :post="post" v-for ="(post,index) in sampleBlogPost" :key="index" />
+    <BlogPost :post="post" v-for="(post, index) in sampleBlogPost" :key="index" />
     <div class="blog-card-wrap">
-      <div class= "container">
-        <h3> View More blogs</h3>
-        <div class = "blog-cards">
-          <BlogCards :post="post" v-for="(post,index) in sampleBlogCards" :key="index" />
+      <div class="container">
+        <h3>View More Recent Blogs</h3>
+        <div class="blog-cards">
+          <BlogCard :post="post" v-for="(post, index) in sampleBlogCards" :key="index" />
         </div>
       </div>
     </div>
     <div class="updates">
       <div class="container">
-        <h2> never miss post. register </h2>
-        <router-link class = "router-button" to="#">
-          Register for min idk <Arrow class ="arrow arrow-light"/>
+        <h2> Never miss a post. Register today! </h2>
+        <router-link class = "router-button" to="#">Register for GameBlog<Arrow class ="arrow arrow-light"/>
         </router-link>
       </div>
     </div>
@@ -22,7 +21,7 @@
 </template>
 
 <script>
-import BlogPost from "../components/BlogPost.vue";
+import BlogPost from "../components/BlogPost";
 import BlogCard from "../components/BlogCard.vue";
 import Arrow from "../assets/Icons/arrow-right-light.svg"
 export default {
@@ -30,27 +29,54 @@ export default {
   components: { BlogPost, BlogCard, Arrow },
   data(){
     return{
-      welcomeScreen:{
+      welcomeScreen: {
         title: "Welcome!",
         blogPost: 
           "Weekly blog asfasd",
         welcomeScreen: true,
-        photo: "Coding",
+        photo: "coding",
       },
       sampleBlogPost: [
         {
           title: "title1",
-          blogHTML :"blogHTML1",
-          blogCoverPhoto:"beautiful-stories",
+          blogHTML : "blogHTML1",
+          blogCoverPhoto: "beautiful-stories",
         },
         {
           title: "title2",
-          blogHTML :"blogHTML2",
-          blogCoverPhoto:"designed-for-everyone",
+          blogHTML : "blogHTML2",
+          blogCoverPhoto: "designed-for-everyone",
         },
       ],
-    };
+      sampleBlogCards: [
+        { 
+        blogTitle: "Blog Card #1", 
+        blogCoverPhoto: "stock-1", 
+        blogDate: "May 1, 2021" 
+        },
+        { 
+        blogTitle: "Blog Card #2", 
+        blogCoverPhoto: "stock-2", 
+        blogDate: "May 1, 2021" 
+        },
+        { 
+        blogTitle: "Blog Card #3", 
+        blogCoverPhoto: "stock-3", 
+        blogDate: "May 1, 2021" 
+        },
+        { 
+        blogTitle: "Blog Card #4", 
+        blogCoverPhoto: "stock-4", 
+        blogDate: "May 1, 2021" 
+        },
+      ]
+    }
   },
+  // computed: {
+  //   sampleBlogCards() {
+  //     return this.$store.state.sampleBlogCards
+  //   }
+  // }
 };
 </script>
 
@@ -59,12 +85,9 @@ export default {
 
 
 
-
-
-
 <style lang= "scss" scoped>
-  .blog-card-wrap{
-    h3{
+  .blog-card-wrap {
+    h3 {
       font-weight: 300;
       font-size: 28px;
       margin-bottom: 32px;
@@ -77,7 +100,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      @media (min-width:800px){
+      @media (min-width: 800px){
         padding: 125px 25px;
         flex-direction: row;
       }
