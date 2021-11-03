@@ -1,8 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-<<<<<<< Updated upstream
-=======
 import Blogs from "../views/Blogs.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
@@ -11,7 +9,6 @@ import Profile from "../views/Profile.vue";
 import CreatePost from "../views/CreatePost.vue";
 import BlogPreview from "../views/BlogPreview.vue";
 import ViewBlog from "../views/ViewBlog.vue";
->>>>>>> Stashed changes
 
 Vue.use(VueRouter);
 
@@ -20,10 +17,8 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
-<<<<<<< Updated upstream
-=======
     meta: {
-      title : 'Home',
+      title : 'Home'
     }
   },
   {
@@ -31,7 +26,7 @@ const routes = [
     name: "Blogs",
     component: Blogs,
     meta: {
-      title : 'Blogs',
+      title : 'Blogs'
     }
   },
   {
@@ -39,7 +34,7 @@ const routes = [
     name: "Login",
     component: Login,
     meta: {
-      title : 'Login',
+      title : 'Login'
     }
   },
   {
@@ -47,7 +42,7 @@ const routes = [
     name: "Register",
     component: Register,
     meta: {
-      title : 'Register',
+      title : 'Register'
     }
   },
   {
@@ -55,7 +50,7 @@ const routes = [
     name: "ForgotPassword",
     component: ForgotPassword,
     meta: {
-      title : 'Forgot Password',
+      title : 'Forgot Password'
     }
   },
   {
@@ -89,7 +84,6 @@ const routes = [
     meta: {
       title : 'View Blog Post',
     }
->>>>>>> Stashed changes
   },
 ];
 
@@ -99,4 +93,8 @@ const router = new VueRouter({
   routes,
 });
 
+router.beforeEach((to,from,next) => {
+  document.title = `${to.meta.title} | GameBlog `;
+  next();
+});
 export default router;

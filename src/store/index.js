@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import firebase from "firebase/app";
+import "firebase/auth";
+import db from "../firebase/firebaseInit";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-<<<<<<< Updated upstream
-  },
-  mutations: {
-=======
     sampleBlogCards: [
       {blogTitle: "Blog Card #1", blogCoverPhoto: "stock-1", blogDate: "May 1,2021"},
       {blogTitle: "Blog Card #2", blogCoverPhoto: "stock-2", blogDate: "May 1,2021"},
@@ -71,9 +70,23 @@ export default new Vuex.Store({
     changeUsername(state, payload) {
       state.profileUsername = payload;
     },
->>>>>>> Stashed changes
   },
   actions: {
+    async getCurrentUser({commit}) {
+      const dataBase = await db.collection('users').doc(firebase.auth().currentUser.uid);
+      const dbResults = await dataBase.get();
+      commit("setProfileInfo", dbResults);
+      commit("setProfileInitials");
+    },
+    async updateUserSettings({ commit, state }) {
+      const dataBase = await db.collection('users').doc(state.profileId);
+      await dataBase.update({
+        firstName: state.profileFirstName,
+        lastName: state.profileLastName,
+        username: state.profileUsername,
+      });
+      commit("setProfileInitials"); //update profile initial if there was a change
+    },
   },
   modules: {
   }
